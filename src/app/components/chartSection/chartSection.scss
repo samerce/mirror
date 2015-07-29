@@ -1,25 +1,54 @@
-.acme-malarkey {
-  text-transform: capitalize;
-  color: #cb3837;
+.chart-section {
+  flex: 0 0 50%;
+  $colPadding: 20px;
 
-  &:after {
-    animation: cursor-blink 0.4s linear infinite;
-    content: "|";
-    color: #cb3837;
+  .rows {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 600;
+    .chart-row {
+      flex: 0 0 auto;
+      margin-top: 5px;
+    }
   }
-}
-
-@keyframes cursor-blink {
-  1% {
-    opacity: 0;
+  h2 {
+    text-transform: uppercase;
+    padding: 0 $colPadding;
   }
-  40% {
-    opacity: 0;
+  .chart-row .row {
+    $height: 35px;
+    height: $height;
+    line-height: $height;
+    width: 300px;
+    background: blue;
+    padding: 0 15px;
+    color: white;
   }
-  60% {
-    opacity: 1;
+  &.languages {
+    .chart-row {
+      padding-right: $colPadding;
+      text-align: right;
+      .row {
+        border-radius: 5px 3px 3px 5px;
+      }
+    }
+    h2 {
+      text-align: right;
+    }
   }
-  100% {
-    opacity: 1;
+  &.frameworks {
+    .rows {
+      align-items: flex-start;
+    }
+    .chart-row {
+      padding-left: $colPadding;
+      .row {
+        border-radius: 3px 5px 5px 3px;
+      }
+    }
+    h2 {
+      text-align: left;
+    }
   }
 }

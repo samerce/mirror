@@ -1,0 +1,62 @@
+.main {
+  h1 {
+    text-align: center;
+  }
+
+  .charts {
+    display: flex;
+    padding: 0 10px;
+    position: relative;
+    margin-bottom: 50px;
+
+    .separator {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      background: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0));
+      height: 470px;
+    }
+  }
+
+  h2.tools {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .tools-section {
+    display: flex;
+    width: 800px;
+    margin: 20px auto;
+
+    .tool {
+      $border: 1px solid orange;
+      $height: 35px;
+      background: orangered;
+      color: lightgoldenrodyellow;
+      border-left: $border;
+      text-align: center;
+      height: $height;
+      line-height: $height;
+
+      &.git {
+        flex: 0 0 16%;
+        border-radius: 5px 0 0 5px;
+      }
+      &.intellij {
+        flex: 0 0 23%;
+      }
+      &.eclipse {
+        flex: 0 0 23%;
+      }
+      &.xcode {
+        flex: 0 0 23%;
+      }
+      &.gulp {
+        flex: 0 0 15%;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+
+}
+
