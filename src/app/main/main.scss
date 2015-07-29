@@ -1,6 +1,25 @@
 .main {
   h1 {
     text-align: center;
+    letter-spacing: 1px;
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+
+  .email, .phone {
+    position: absolute;
+    top: 15px;
+    i {
+      padding: 0 8px;
+      font-size: 20px;
+      vertical-align: middle;
+    }
+  }
+  .email {
+    left: 15%;
+  }
+  .phone {
+    right: 15%;
   }
 
   .charts {
@@ -19,20 +38,21 @@
     }
   }
 
-  h2.tools {
+  h2.tools, h2.exp {
     text-transform: uppercase;
     text-align: center;
   }
   .tools-section {
     display: flex;
     width: 800px;
-    margin: 20px auto;
+    margin: 20px auto 40px auto;
 
     .tool {
-      $border: 1px solid orange;
+      $border: 1px solid green;
       $height: 35px;
-      background: orangered;
-      color: lightgoldenrodyellow;
+      background: rgb(164, 198, 57);
+      color: white;
+      font-weight: 600;
       border-left: $border;
       text-align: center;
       height: $height;
@@ -41,6 +61,7 @@
       &.git {
         flex: 0 0 16%;
         border-radius: 5px 0 0 5px;
+        border-left: none;
       }
       &.intellij {
         flex: 0 0 23%;

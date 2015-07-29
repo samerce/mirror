@@ -1,6 +1,6 @@
 .chart-section {
   flex: 0 0 50%;
-  $colPadding: 20px;
+  $colPadding: 30px;
 
   .rows {
     display: flex;
@@ -14,7 +14,7 @@
   }
   h2 {
     text-transform: uppercase;
-    padding: 0 $colPadding;
+    padding: 0 $colPadding - 5;
   }
   .chart-row .row {
     $height: 35px;
