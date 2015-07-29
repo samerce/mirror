@@ -1,9 +1,9 @@
 .main {
   h1 {
     text-align: center;
-    letter-spacing: 1px;
     font-size: 42px;
     margin-bottom: 20px;
+    font-family: Radley, Helvetica, sans-serif;
   }
 
   .email, .phone {
@@ -15,18 +15,19 @@
       vertical-align: middle;
     }
   }
+  $contactPadding: 50px;
   .email {
-    left: 15%;
+    right: $contactPadding;
   }
   .phone {
-    right: 15%;
+    left: $contactPadding;
   }
 
   .charts {
     display: flex;
-    padding: 0 10px;
     position: relative;
     margin-bottom: 50px;
+    padding: 0 70px;
 
     .separator {
       position: absolute;
@@ -79,5 +80,12 @@
     }
   }
 
+}
+
+@media print {
+  html {
+    transform: scale(.8);
+    transform-origin: top center;
+  }
 }
 

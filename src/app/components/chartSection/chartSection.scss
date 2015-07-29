@@ -1,12 +1,14 @@
 .chart-section {
   flex: 0 0 50%;
-  $colPadding: 30px;
+  $colPadding: 25px;
 
   .rows {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     font-weight: 600;
+    overflow: hidden;
+
     .chart-row {
       flex: 0 0 auto;
       margin-top: 5px;
@@ -14,20 +16,23 @@
   }
   h2 {
     text-transform: uppercase;
-    padding: 0 $colPadding - 5;
+    padding: 0 $colPadding;
   }
   .chart-row .row {
     $height: 35px;
     height: $height;
     line-height: $height;
-    width: 300px;
-    background: blue;
     padding: 0 15px;
     color: white;
+    transform: translateX(150%);
+    transition: all .7s cubic-bezier(0.19, 1, 0.22, 1);
   }
   &.languages {
+    .rows {
+      padding-right: 25px;
+    }
+
     .chart-row {
-      padding-right: $colPadding;
       text-align: right;
       .row {
         border-radius: 5px 3px 3px 5px;
@@ -39,12 +44,16 @@
   }
   &.frameworks {
     .rows {
+      padding-left: 25px;
+    }
+
+    .rows {
       align-items: flex-start;
     }
     .chart-row {
-      padding-left: $colPadding;
       .row {
         border-radius: 3px 5px 5px 3px;
+        transform: translateX(-150%);
       }
     }
     h2 {
