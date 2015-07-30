@@ -1,11 +1,11 @@
 .main
-  .email
+  a.email(href="mailto:samerce@gmail.com")
     i.fa.fa-envelope
-    a(href="mailto:samerce@gmail.com") samerce@gmail.com
+    div samerce@gmail.com
   h1 Samer Chahine
-  .phone
+  a.phone(href="tel:2069632611")
     i.fa.fa-phone
-    a(href="tel:2069632611") (206) 963-2611
+    div (206) 963-2611
   .charts
     chart-section(name="languages" values="langValues")
     .separator
@@ -20,5 +20,5 @@
     .tool.gulp gulp/grunt
 
   h2.exp EXPERIENCE
-  timeline(nodes="timelineNodes")
+  timeline
 

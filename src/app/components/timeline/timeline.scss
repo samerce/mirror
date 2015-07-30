@@ -3,7 +3,7 @@
 
   &:before {
     position: absolute;
-    top: 50%;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
@@ -13,30 +13,86 @@
   }
 
   .node {
-    text-align: right;
+    position: relative;
     width: 50%;
+    margin-bottom: 20px;
+    ul {
+      list-style: none;
+    }
+    i {
+      position: absolute;
+      right: 15px;
+      top: 5px;
+      font-size: 20px;
+      color: rgba(0,0,0,.2);
+    }
     .innards {
-      padding: 0 20px;
+      padding: 15px;
+      margin: 0 30px 0 20%;
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0,.1);
+      box-shadow: 0px 0px 3px rgba(0,0,0,.1);
     }
     .title {
       font-size: 20px;
-
+      color: green;
     }
     .content {
       font-size: 16px;
     }
     .date {
       position: absolute;
-      left: 50%;
+      left: 100%;
       top: 5px;
+      width: 130px;
       padding-left: 15px;
       font-size: 14px;
+      color: green;
+      font-weight: 800;
+      .sub-date {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        color: black;
+        font-weight: 300;
+      }
+    }
+    &.right {
+      text-align: left;
+      margin-left: 50%;
+      .date {
+        padding-left: 0;
+        padding-right: 15px;
+        left: initial;
+        right: 50%;
+        .sub-date {
+          padding-right: 15px;
+        }
+      }
+      .dot-area {
+        left: 0;
+      }
+    }
+    &.glyphite {
+      .dot-area, .date {
+        top: 180px;
+      }
+    }
+    &.tal {
+      .dot-area, .date {
+        top: 400px;
+      }
+    }
+    &.amazon {
+      .dot-area, .date {
+        top: 665px;
+      }
     }
     .dot-area {
       $size: 20px;
       position: absolute;
       top: 5px;
-      left: 50%;
+      right: -15px;
       transform: translateX(-50%);
       width: $size;
       height: $size;

@@ -22,10 +22,3 @@ angular.module "mirror"
       ['Bootstrap', .4, 'rgb(11, 113, 185)']
       ['PureMVC', .3, 'rgb(11, 113, 185)']
     ]
-    $scope.timelineNodes = [
-      {
-        title: 'Blackjack Genius'
-        content: 'Senior Developer & Designer'
-        date: 'TODAY'
-      }
-    ]

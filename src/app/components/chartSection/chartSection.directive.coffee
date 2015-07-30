@@ -11,9 +11,9 @@ angular.module "mirror"
         rows.each ->
           setTimeout =>
             $(@).css('transform', 'none')
-          , (i + 500)
+          , (i + 200)
           i += delayInterval
-      animateRows $('.languages .chart-row .row')
-      animateRows $('.frameworks .chart-row .row')
+      animateRows $('.languages .chart-row')
+      animateRows $('.frameworks .chart-row')
 
 
