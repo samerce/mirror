@@ -2,62 +2,91 @@
   $focusColor: green;
   position: relative;
   height: 1700px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
 
   &:before {
     position: absolute;
-    top: 15px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     background: linear-gradient(to bottom, black 95%, transparent);
-    height: 1500px;
+    height: 1550px;
     content: ' ';
   }
 
-  .node {
-    display: inline-block;
+  .column {
+    flex: 0 0 50%;
+
+    &.left {
+      .pointer {
+        right: 12px;
+      }
+      .dot-area {
+        right: 0;
+        transform: translateX(50%);
+      }
+      .date {
+        left: 100%;
+        margin-left: 15px;
+      }
+    }
+    &.right {
+      .pointer {
+        left: 12px;
+      }
+      .dot-area {
+        left: 0;
+        transform: translateX(-50%);
+      }
+      .date {
+        right: 100%;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .column .node {
+    position: relative;
     margin-bottom: 20px;
-    ul {
-      list-style: none;
-    }
-    .date, .dot-area, .pointer {
-      top: 15px;
-    }
+    padding: 0 30px;
+
     .pointer {
       position: absolute;
-      left: 50%;
+
       font-size: 20px;
       color: rgba(0,0,0,.2);
     }
     .innards {
-      position: absolute;
-      left: 50%;
       padding: 15px;
       border-radius: 5px;
       border: 1px solid rgba(0,0,0,.1);
       box-shadow: 0px 0px 3px rgba(0,0,0,.1);
-      max-width: 525px;
+      background: white;
+
+      .title {
+        font-size: 20px;
+        line-height: 26px;
+        color: $focusColor;
+      }
+      .company {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+      .about {
+        font-size: 16px;
+      }
+      hr {
+        border-color: rgba(0,0,0,.2);
+      }
     }
-    .title {
-      font-size: 20px;
-      line-height: 26px;
-      color: $focusColor;
-    }
-    .company {
-      font-size: 18px;
-      line-height: 28px;
-      font-weight: 600;
-    }
-    hr {
-      border-color: rgba(0,0,0,.2);
-    }
-    .content {
-      font-size: 16px;
-    }
+
     .date {
       position: absolute;
-      left: 50%;
-      padding-left: 15px;
+      min-width: 141px;
       font-size: 16px;
       color: green;
       font-weight: 800;
@@ -69,67 +98,9 @@
         font-weight: 300;
       }
     }
-    &.left {
-      .innards {
-        transform: translateX(-100%);
-        margin-left: -45px;
-      }
-      .pointer {
-        transform: translateX(-25px);
-      }
-    }
-    &.right {
-      .pointer {
-        transform: translateX(20px);
-      }
-      .innards {
-        margin-left: 45px;
-      }
-      .date {
-        padding-right: 15px;
-        transform: translateX(-100%);
-        .sub-date {
-          padding-right: 15px;
-        }
-      }
-    }
-    &.glyphite {
-      .innards {
-        top: 260px;
-      }
-      .dot-area, .date, .pointer {
-        top: 280px;
-      }
-    }
-    &.tal {
-      .innards {
-        top: 560px;
-      }
-      .dot-area, .date, .pointer {
-        top: 580px;
-      }
-    }
-    &.amazon {
-      .innards {
-        top: 930px;
-      }
-      .dot-area, .date, .pointer {
-        top: 950px;
-      }
-    }
-    &.degree {
-      .innards {
-        top: 1435px;
-      }
-      .dot-area, .date, .pointer {
-        top: 1455px;
-      }
-    }
     .dot-area {
       $size: 20px;
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       width: $size;
       height: $size;
       text-align: center;
@@ -145,6 +116,137 @@
         width: $size;
         height: $size;
         background: black;
+      }
+    }
+    .date, .dot-area, .pointer {
+      top: 20px;
+    }
+    &.glyphite {
+      margin-top: 280px;
+      .date {
+        min-width: 158px;
+      }
+    }
+    &.tal {
+      margin-top: 330px;
+      .date {
+        min-width: 160px;
+      }
+    }
+    &.amazon {
+      margin-top: 395px;
+      .date {
+        min-width: 154px;
+      }
+    }
+    &.degree {
+      margin-top: 500px;
+      .date {
+        min-width: 154px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1136px) {
+  .timeline {
+    display: block;
+    padding-top: 20px;
+
+    .column {
+      position: absolute;
+      width: 100%;
+
+      &.right {
+        right: 0;
+      }
+      &.left {
+        .dot-area {
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .column .node {
+      background: white;
+
+      .pointer {
+        display: none;
+      }
+      .dot-area {
+        top: -10px;
+        right: initial;
+        left: 50%;
+      }
+      .date {
+        background: white;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+
+        .sub-date {
+          display: none;
+        }
+      }
+
+      &.glyphite {
+        margin-top: 320px;
+      }
+      &.tal {
+        margin-top: 390px;
+      }
+      &.amazon {
+        margin-top: 435px;
+      }
+      &.degree {
+        margin-top: 515px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    &:before {
+      height: 1980px;
+    }
+
+    .column .node {
+      &.glyphite {
+        margin-top: 370px;
+      }
+      &.tal {
+        margin-top: 470px;
+      }
+      &.amazon {
+        margin-top: 535px;
+      }
+      &.degree {
+        margin-top: 755px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .timeline {
+    &:before {
+      height: 2200px;
+    }
+
+    .column .node {
+      &.glyphite {
+        margin-top: 410px;
+      }
+      &.tal {
+        margin-top: 490px;
+      }
+      &.amazon {
+        margin-top: 620px;
+      }
+      &.degree {
+        margin-top: 795px;
       }
     }
   }

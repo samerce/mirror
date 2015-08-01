@@ -4,8 +4,9 @@
   h1 {
     text-align: center;
     font-size: 42px;
-    margin: 0 0 0 10px;
+    margin: 0;
     font-family: Radley, Helvetica, sans-serif;
+    text-shadow: 1px 1px rgba(0,0,0,.1);
   }
 
   .email, .phone {
@@ -15,6 +16,7 @@
     text-decoration: none;
     div {
       display: inline-block;
+      vertical-align: middle;
     }
     i {
       padding: 0 8px;
@@ -34,7 +36,7 @@
     display: flex;
     position: relative;
     margin-bottom: 40px;
-    padding: 0 70px;
+    padding: 0 40px;
 
     .separator {
       position: absolute;
@@ -52,8 +54,9 @@
   }
   .tools-section {
     display: flex;
-    width: 800px;
-    margin: 20px auto 40px auto;
+    max-width: 700px;
+    margin: 20px auto 40px;
+    padding: 0 20px;
 
     .tool {
       $border: 1px solid green;
@@ -106,5 +109,40 @@
     }
   }
 
+}
+
+@media (max-width: 840px) {
+  .main {
+    $contactPadding: 20px;
+    .email {
+      right: $contactPadding;
+    }
+    .phone {
+      left: $contactPadding;
+    }
+    h1 {
+      margin-bottom: 50px;
+    }
+    .email, .phone {
+      top: 85px;
+    }
+    .charts {
+      padding: 0 20px;
+      .separator {
+        height: 410px;
+      }
+    }
+    .tools-section {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .main {
+    .email, .phone {
+      font-size: 12px;
+    }
+  }
 }
 
