@@ -1,7 +1,7 @@
 angular.module "mirror"
   .controller "MainController", ($scope) ->
     $scope.langValues = [
-      ['JavaScript/CoffeeScript', 1, 'rgb(242, 116, 44)'],
+      ['JavaScript/CoffeeScript', .98, 'rgb(242, 116, 44)'],
       ['HTML5', .9, 'rgb(242, 116, 44)']
       ['SASS/CSS', .9, 'rgb(242, 116, 44)']
       ['Java', .85, 'rgb(242, 116, 44)']
@@ -12,7 +12,7 @@ angular.module "mirror"
       ['C/C++', .3, 'rgb(242, 116, 44)']
     ]
     $scope.fwValues = [
-      ['AngularJS', 1, 'rgb(11, 113, 185)']
+      ['AngularJS', .98, 'rgb(11, 113, 185)']
       ['Android (FireOS)', .9, 'rgb(11, 113, 185)']
       ['iOS', .9, 'rgb(11, 113, 185)']
       ['PlayCanvas', .8, 'rgb(11, 113, 185)']

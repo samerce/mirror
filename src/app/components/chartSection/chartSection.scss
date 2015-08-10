@@ -64,7 +64,22 @@
   }
 }
 
-@media (max-width: 768px) {
+@media print {
+  .chart-section {
+    .rows .chart-row {
+      border: none;
+    }
+    .chart-row .row {
+      $height: 20px;
+      height: $height;
+      line-height: $height;
+      font-size: 11px;
+      padding: 0 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
   $colPadding: 10px;
 
   .chart-section {

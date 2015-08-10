@@ -11,12 +11,22 @@
 
   .email, .phone {
     position: absolute;
-    top: 35px;
+    top: 25px;
     font-size: 16px;
     text-decoration: none;
+    color: green;
+    background: white;
+    width: 220px;
+    $height: 40px;
+    height: $height;
+    padding: 0 15px;
+    text-align: center;
+    @include card;
+
     div {
       display: inline-block;
       vertical-align: middle;
+      line-height: $height;
     }
     i {
       padding: 0 8px;
@@ -26,17 +36,24 @@
   }
   $contactPadding: 50px;
   .email {
-    right: $contactPadding;
+    right: 0;
   }
   .phone {
-    left: $contactPadding;
+    // left: $contactPadding;
+    // text-align: right;
   }
 
   .charts {
     display: flex;
     position: relative;
-    margin-bottom: 40px;
-    padding: 0 40px;
+    margin: 15px 30px 20px;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background: white;
+
+    h2 {
+      margin: 5px 0;
+    }
 
     .separator {
       position: absolute;
@@ -44,7 +61,7 @@
       top: 0;
       width: 1px;
       background: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0));
-      height: 470px;
+      height: 440px;
     }
   }
 
@@ -55,8 +72,9 @@
   .tools-section {
     display: flex;
     max-width: 700px;
-    margin: 20px auto 40px;
-    padding: 0 20px;
+    margin: 20px auto 20px;
+    padding: 0;
+    @include card;
 
     .tool {
       $border: 1px solid green;
@@ -98,20 +116,60 @@
     transform-origin: top center;
   }
   .main {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .email, .phone {
+      font-size: 12px;
+      top: 20px;
+      $height: 30px;
+      height: $height;
+      box-shadow: none;
+
+      div {
+        line-height: height;
+      }
+    }
     .email{
       right: 0;
+      text-align: right;
+      i {
+        font-size: 18px;
+      }
     }
     .phone {
       left: 10px;
+      text-align: left;
     }
     .chart-row .row {
       font-size: 15px;
     }
-  }
 
+    .charts {
+      box-shadow: none;
+      border: none;
+      .separator {
+        height: 300px;
+      }
+    }
+
+    h2.tools {
+      margin: 10px auto;
+    }
+    .tools-section {
+      margin: 10px auto;
+      .tool {
+        $height: 25px;
+        height: $height;
+        line-height: $height;
+        font-size: 14px;
+      }
+    }
+  }
 }
 
-@media (max-width: 840px) {
+@media only screen and (max-width: 840px) {
   .main {
     $contactPadding: 20px;
     .email {
@@ -121,7 +179,7 @@
       left: $contactPadding;
     }
     h1 {
-      margin-bottom: 50px;
+      margin-bottom: 70px;
     }
     .email, .phone {
       top: 85px;
@@ -132,8 +190,12 @@
         height: 410px;
       }
     }
+    h2.tools {
+        margin-top: 50px;
+      }
     .tools-section {
       font-size: 12px;
+      margin: 30px;
     }
   }
 }

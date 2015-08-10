@@ -12,6 +12,12 @@ html {
 }
 
 $sexyEase: cubic-bezier(0.19, 1, 0.22, 1);
+$subtleShadow: 0px 0px 3px rgba(0,0,0,.1);
+
+@mixin card {
+  box-shadow: $subtleShadow;
+  border-radius: 5px;
+}
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject

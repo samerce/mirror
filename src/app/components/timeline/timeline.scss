@@ -65,7 +65,20 @@
       border: 1px solid rgba(0,0,0,.1);
       box-shadow: 0px 0px 3px rgba(0,0,0,.1);
       background: white;
+      position: relative;
 
+      p {
+        margin: 12px 0;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      a.btn {
+        background: transparent;
+        height: 98%;
+        width: 98%;
+        position: absolute;
+      }
       .title {
         font-size: 20px;
         line-height: 26px;
@@ -128,7 +141,7 @@
       }
     }
     &.tal {
-      margin-top: 330px;
+      margin-top: 350px;
       .date {
         min-width: 160px;
       }
@@ -148,7 +161,54 @@
   }
 }
 
-@media (max-width: 1136px) {
+@mixin flatTimeline {
+  display: block;
+  padding-top: 20px;
+
+  &:before {
+    width: 3px;
+  }
+
+  .column {
+    position: absolute;
+    width: 100%;
+
+    &.right {
+      right: 0;
+    }
+    &.left {
+      .dot-area {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .column .node {
+    background: white;
+
+    .pointer {
+      display: none;
+    }
+    .dot-area {
+      top: -10px;
+      right: initial;
+      left: 50%;
+    }
+    .date {
+      background: white;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+
+      .sub-date {
+        display: none;
+      }
+    }
+  }
+}
+
+@media print {
   .timeline {
     display: block;
     padding-top: 20px;
@@ -191,6 +251,27 @@
       }
 
       &.glyphite {
+        top: 10px;
+      }
+      &.tal {
+        top: 170px;
+      }
+      &.amazon {
+        top: 50px;
+      }
+      &.degree {
+        top: 180px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1136px) {
+  .timeline {
+    @include flatTimeline();
+
+    .column .node {
+      &.glyphite {
         margin-top: 320px;
       }
       &.tal {
@@ -206,7 +287,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .timeline {
     &:before {
       height: 1980px;
